@@ -18,8 +18,16 @@ class Movie {
     int voteCount;
 
     get fullPosterImg {
-      if ( this.posterPath != null) {
+      if ( posterPath != null) {
         return 'https://image.tmdb.org/t/p/w500${ this.posterPath }';
+      } else {
+      return 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
+      }
+    }
+
+     get fullbackdropPath {
+      if ( posterPath != null) {
+        return 'https://image.tmdb.org/t/p/w500${ this.backdropPath }';
       } else {
       return 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
       }
