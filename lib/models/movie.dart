@@ -17,21 +17,7 @@ class Movie {
     double voteAverage;
     int voteCount;
 
-    get fullPosterImg {
-      if ( posterPath != null) {
-        return 'https://image.tmdb.org/t/p/w500${ this.posterPath }';
-      } else {
-      return 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
-      }
-    }
-
-     get fullbackdropPath {
-      if ( backdropPath != null) {
-        return 'https://image.tmdb.org/t/p/w500${ this.backdropPath }';
-      } else {
-      return 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
-      }
-    }
+    String? heroId;
 
     Movie({
         required this.adult,
@@ -49,6 +35,22 @@ class Movie {
         required this.voteAverage,
         required this.voteCount,
     });
+
+    get fullPosterImg {
+      if ( posterPath != null) {
+        return 'https://image.tmdb.org/t/p/w500${ this.posterPath }';
+      } else {
+      return 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
+      }
+    }
+
+     get fullbackdropPath {
+      if ( backdropPath != null) {
+        return 'https://image.tmdb.org/t/p/w500${ this.backdropPath }';
+      } else {
+      return 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
+      }
+    }
 
     factory Movie.fromJson(String str) => Movie.fromMap(json.decode(str));
 
