@@ -26,7 +26,7 @@ class Movie {
     }
 
      get fullbackdropPath {
-      if ( posterPath != null) {
+      if ( backdropPath != null) {
         return 'https://image.tmdb.org/t/p/w500${ this.backdropPath }';
       } else {
       return 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
