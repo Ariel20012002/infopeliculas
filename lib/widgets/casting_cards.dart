@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:infopeliculas/models/models.dart';
 import 'package:infopeliculas/providers/movies_provider.dart';
 import 'package:provider/provider.dart';
@@ -8,7 +7,7 @@ class CastingCards extends StatelessWidget {
 
   final int movieId;
 
-  const CastingCards( this.movieId );
+  const CastingCards( this.movieId, {super.key} );
   
   @override
   Widget build(BuildContext context) {
@@ -20,9 +19,9 @@ class CastingCards extends StatelessWidget {
       builder: ( _ , AsyncSnapshot<List<Cast>> snapshot) {    
         if ( !snapshot.hasData ) {
           return Container(
-            constraints: BoxConstraints(maxWidth: 150),
+            constraints: const BoxConstraints(maxWidth: 150),
             height: 180,
-            child: CupertinoActivityIndicator(),
+            child: const CupertinoActivityIndicator(),
           );
         } 
 

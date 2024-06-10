@@ -3,6 +3,7 @@ import 'package:infopeliculas/models/models.dart';
 import 'package:infopeliculas/widgets/widgets.dart';
 
 class DetailsScreen extends StatelessWidget {
+  const DetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

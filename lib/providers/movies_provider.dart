@@ -20,10 +20,10 @@ class MoviesProvider extends ChangeNotifier {
   int _popularPage = 0;
 
   final debouncer = Debouncer(
-    duration: Duration( milliseconds: 500 ),
+    duration: const Duration( milliseconds: 500 ),
   );
 
-  final StreamController<List<Movie>> _suggestionStreamController = new StreamController.broadcast();
+  final StreamController<List<Movie>> _suggestionStreamController = StreamController.broadcast();
   Stream<List<Movie>> get suggestionStream => _suggestionStreamController.stream;
 
   MoviesProvider() { 
@@ -94,14 +94,14 @@ class MoviesProvider extends ChangeNotifier {
     debouncer.value = '';
     debouncer.onValue = ( value ) async {
       final results = await searchMovies(value);
-      this._suggestionStreamController.add(results);
+      _suggestionStreamController.add(results);
     };
 
-    final timer = Timer.periodic(Duration(milliseconds: 300), ( _ ) {
+    final timer = Timer.periodic(const Duration(milliseconds: 300), ( _ ) {
       debouncer.value = searchTerm;
     });
 
-    Future.delayed(Duration(milliseconds: 301)).then(( _ ) => timer.cancel());
+    Future.delayed(const Duration(milliseconds: 301)).then(( _ ) => timer.cancel());
   }
 
 }

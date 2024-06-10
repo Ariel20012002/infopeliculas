@@ -38,7 +38,7 @@ class Cast {
 
     get fullProfilePath {
       if ( profilePath != null) {
-        return 'https://image.tmdb.org/t/p/w500${ this.profilePath }';
+        return 'https://image.tmdb.org/t/p/w500$profilePath ';
       } else {
       return 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
       }

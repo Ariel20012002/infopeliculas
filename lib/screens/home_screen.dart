@@ -7,6 +7,7 @@ import 'package:infopeliculas/providers/movies_provider.dart';
 import 'package:infopeliculas/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
   
   @override
   Widget build(BuildContext context) {

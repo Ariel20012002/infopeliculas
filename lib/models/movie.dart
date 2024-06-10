@@ -38,7 +38,7 @@ class Movie {
 
     get fullPosterImg {
       if ( posterPath != null) {
-        return 'https://image.tmdb.org/t/p/w500${ this.posterPath }';
+        return 'https://image.tmdb.org/t/p/w500$posterPath ';
       } else {
       return 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
       }
@@ -46,7 +46,7 @@ class Movie {
 
      get fullbackdropPath {
       if ( backdropPath != null) {
-        return 'https://image.tmdb.org/t/p/w500${ this.backdropPath }';
+        return 'https://image.tmdb.org/t/p/w500$backdropPath ';
       } else {
       return 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
       }
