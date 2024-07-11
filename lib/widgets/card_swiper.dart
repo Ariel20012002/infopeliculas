@@ -42,16 +42,30 @@ class CardSwiper extends StatelessWidget {
               tag: movie.heroId!,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: FadeInImage(
-                  placeholder: const AssetImage('assets/no-image.jpg'), 
-                  image: NetworkImage( movie.fullPosterImg ),
-                  fit: BoxFit.cover,
-                ),
+                child: MoviePosterImage(movie: movie),
               ),
             ),
           );
         },
       ),
+    );
+  }
+}
+
+class MoviePosterImage extends StatelessWidget {
+  const MoviePosterImage({
+    super.key,
+    required this.movie,
+  });
+
+  final Movie movie;
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeInImage(
+      placeholder: const AssetImage('assets/no-image.jpg'), 
+      image: NetworkImage( movie.fullPosterImg ),
+      fit: BoxFit.cover,
     );
   }
 }
